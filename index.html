@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      BREEZY FIRST DATE – MVP PROJECT & HOUR ESTIMATION (COMPREHENSIVE)
+    </title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f7f6;
+        color: #333;
+      }
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #d9534f;
+        border-bottom: 3px solid #d9534f;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 2.2em;
+      }
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-top: 30px;
+        font-size: 1.6em;
+      }
+      h3 {
+        color: #5bc0de;
+        margin-top: 20px;
+        font-size: 1.3em;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+      th {
+        background-color: #5cb85c;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .summary-table th,
+      .summary-table td {
+        font-size: 1.2em;
+      }
+      .summary-table th {
+        background-color: #d9534f;
+      }
+      .highlight {
+        background-color: #fcf8e3;
+        padding: 15px;
+        border-left: 5px solid #f0ad4e;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      .note {
+        font-style: italic;
+        color: #6c757d;
+        margin-top: 5px;
+        display: block;
+      }
+      .code-block {
+        background-color: #272822;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 4px;
+        overflow-x: auto;
+        font-family: "Consolas", "Monaco", monospace;
+        white-space: pre;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+        table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+        td {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BREEZY FIRST DATE – MVP PROJECT & HOUR ESTIMATION</h1>
+
+      <div class="highlight">
+        <p>
+          <strong>Role:</strong> Solo Full-Stack Developer (Node.js + React
+          Native)
+        </p>
+        <p>
+          <strong
+            >MVP TOTAL ESTIMATE: 495 hours (~12.4 weeks @ 40 hrs/week)</strong
+          >
+        </p>
+      </div>
+
+      <h2>🛠️ TECH STACK</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Technology</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mobile</td>
+            <td>**React Native (Expo)**</td>
+          </tr>
+          <tr>
+            <td>Backend</td>
+            <td>**Node.js + Express**</td>
+          </tr>
+          <tr>
+            <td>Database</td>
+            <td>**MongoDB + Mongoose**</td>
+          </tr>
+          <tr>
+            <td>Auth</td>
+            <td>JWT + bcrypt + OAuth2</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>AWS S3 (presigned URLs)</td>
+          </tr>
+          <tr>
+            <td>Push</td>
+            <td>Firebase Cloud Messaging (FCM)</td>
+          </tr>
+          <tr>
+            <td>Deep Linking</td>
+            <td>Branch.io</td>
+          </tr>
+          <tr>
+            <td>Social Login</td>
+            <td>Google, Apple, Facebook</td>
+          </tr>
+          <tr>
+            <td>Calendar</td>
+            <td>react-native-calendars</td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>Redux</td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>1. 🔑 ONBOARDING & AUTHENTICATION (60 hrs)</h2>
+      <span class="note"
+        >Hours allocated for robust form handling and social integration
+        complexity.</span
+      >
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1a. Welcome Screen</td>
+            <td>4</td>
+            <td>Branding, “Get Started” CTA → Auth</td>
+          </tr>
+          <tr>
+            <td>1b. Authentication Flow</td>
+            <td>32</td>
+            <td>See detailed breakdown below</td>
+          </tr>
+          <tr>
+            <td>1c. Profile Setup – Name & Age</td>
+            <td>10</td>
+            <td>Full name, email, postal code, DOB (18+ validation)</td>
+          </tr>
+          <tr>
+            <td>1d. Profile Setup – Photos</td>
+            <td>14</td>
+            <td>
+              S3 upload, 1–9 photos, drag-reorder, delete, thumbnails (Optimized
+              via Figma)
+            </td>
+          </tr>
+          <tr>
+            <td>**Total Part 1**</td>
+            <td>**60**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>1b. Authentication – Detailed Breakdown (32 hrs)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Email + Password (Signup/Login)</td>
+            <td>10</td>
+            <td>Form validation, JWT, bcrypt, duplicate check</td>
+          </tr>
+          <tr>
+            <td>Google Sign-In</td>
+            <td>7</td>
+            <td>@react-native-google-signin, one-tap, auto-fill name/email</td>
+          </tr>
+          <tr>
+            <td>Apple Sign-In</td>
+            <td>8</td>
+            <td>expo-apple-authentication, iOS-only, hide email support</td>
+          </tr>
+          <tr>
+            <td>Facebook Login</td>
+            <td>7</td>
+            <td>react-native-fbsdk-next, fetch name/email</td>
+          </tr>
+          <tr>
+            <td>Social Auth Backend</td>
+            <td>7</td>
+            <td>OAuth2 callbacks, findOrCreate, link providers</td>
+          </tr>
+          <tr>
+            <td>UI & Toggle Logic</td>
+            <td>3</td>
+            <td>Social buttons, loading states, error messages</td>
+          </tr>
+          <tr>
+            <td>Forgot Password</td>
+            <td>5</td>
+            <td>Reset link, token expiry, email delivery</td>
+          </tr>
+          <tr>
+            <td>**Total 1b**</td>
+            <td>**32**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <span class="note"
+        >App Store Requirement: Apple Sign-In mandatory if offering other social
+        logins</span
+      >
+
+      ---
+
+      <h2>2. 💌 INVITE-BASED SCHEDULING (100 hrs)</h2>
+      <span class="note"
+        >Hours allocated for complex deep linking and token-based state
+        management.</span
+      >
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2a. Generate Invite Link</td>
+            <td>15</td>
+            <td>Date/time picker, optional message, token generation</td>
+          </tr>
+          <tr>
+            <td>2b. Deep Linking + App Store Redirect</td>
+            <td>22</td>
+            <td>
+              Branch.io setup, deferred deep linking, iOS/Android config
+              (Optimized)
+            </td>
+          </tr>
+          <tr>
+            <td>2c. Token Recognition Post-Signup</td>
+            <td>12</td>
+            <td>Auto-redirect to Pending Dates after onboarding</td>
+          </tr>
+          <tr>
+            <td>2d. Accept/Decline Flow</td>
+            <td>15</td>
+            <td>Confirmation modals, push notifications (Optimized)</td>
+          </tr>
+          <tr>
+            <td>2e. Expired/Invalid Handling</td>
+            <td>8</td>
+            <td>Error screens, 410 status, token cleanup (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Backend + Branch.io Logic</td>
+            <td>28</td>
+            <td>Invite model, token expiry (7 days), validation (Optimized)</td>
+          </tr>
+          <tr>
+            <td>**Total Part 2**</td>
+            <td>**100**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <span class="note"
+        >Core Feature: Deferred deep linking enables viral growth</span
+      >
+
+      ---
+
+      <h2>3. 📅 IN-APP SCHEDULING (80 hrs)</h2>
+      <span class="note"
+        >Hours allocated for overlap checks and calendar integration edge
+        cases.</span
+      >
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3a. Schedule with Existing User</td>
+            <td>15</td>
+            <td>Profile → Schedule form, validation (Optimized)</td>
+          </tr>
+          <tr>
+            <td>3b. Receive Invite</td>
+            <td>17</td>
+            <td>Push + in-app, Pending Dates list (Optimized)</td>
+          </tr>
+          <tr>
+            <td>3c. Accept Invite</td>
+            <td>10</td>
+            <td>Confirm → Scheduled Date, calendar add (Optimized)</td>
+          </tr>
+          <tr>
+            <td>3d. Decline Invite</td>
+            <td>8</td>
+            <td>Optional message, notify sender (Optimized)</td>
+          </tr>
+          <tr>
+            <td>3e. View Confirmed Dates</td>
+            <td>12</td>
+            <td>Upcoming list, countdown, “Join” button (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Backend Logic</td>
+            <td>10</td>
+            <td>Date model, status transitions, overlap check (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Push Notifications</td>
+            <td>8</td>
+            <td>FCM + APNS setup, token sync (Optimized)</td>
+          </tr>
+          <tr>
+            <td>**Total Part 3**</td>
+            <td>**80**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>4. 🗓️ CHECK MY DATES (25 hrs)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>My Dates Screen</td>
+            <td>18</td>
+            <td>Tabs: Pending, Upcoming, Past (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Action Buttons</td>
+            <td>7</td>
+            <td>Reschedule/Cancel (if >30 mins away) (Optimized)</td>
+          </tr>
+          <tr>
+            <td>**Total Part 4**</td>
+            <td>**25**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>5. 🔔 NOTIFICATIONS CENTER (20 hrs)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Notification List</td>
+            <td>10</td>
+            <td>Reverse-chronological, timestamps (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Deep Linking</td>
+            <td>5</td>
+            <td>Tap → relevant screen (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Badge + Mark as Read</td>
+            <td>5</td>
+            <td>Real-time updates (Optimized)</td>
+          </tr>
+          <tr>
+            <td>**Total Part 5**</td>
+            <td>**20**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>6. 🗣️ REFER THE APP (12 hrs)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Generate Referral Link</td>
+            <td>5</td>
+            <td>Tokenized URL with user ID (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Share Sheet + Copy</td>
+            <td>4</td>
+            <td>Native mobile sharing</td>
+          </tr>
+          <tr>
+            <td>Referral Tracking (optional)</td>
+            <td>3</td>
+            <td>Track signups from link (Optimized)</td>
+          </tr>
+          <tr>
+            <td>**Total Part 6**</td>
+            <td>**12**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>7. ⚙️ SETTINGS (20 hrs)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Sub-task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7a. Personal Details</td>
+            <td>7</td>
+            <td>Name, email edit, validation</td>
+          </tr>
+          <tr>
+            <td>7b. Change Password</td>
+            <td>7</td>
+            <td>Old + new + confirm, current password required (Optimized)</td>
+          </tr>
+          <tr>
+            <td>7c. Notification Preferences</td>
+            <td>2</td>
+            <td>Toggles for push/in-app</td>
+          </tr>
+          <tr>
+            <td>Navigation & Save Logic</td>
+            <td>4</td>
+            <td>Global access, success/error states</td>
+          </tr>
+          <tr>
+            <td>**Total Part 7**</td>
+            <td>**20**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>➕ CROSS-CUTTING CONCERNS (120 hrs)</h2>
+      <span class="note"
+        >Hours allocated for robust testing, security hardening, and environment
+        setup complexity.</span
+      >
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Hours</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Project Setup</td>
+            <td>10</td>
+            <td>Expo init, Node/Express, MongoDB, ESLint</td>
+          </tr>
+          <tr>
+            <td>Global Navigation</td>
+            <td>16</td>
+            <td>Tab + Stack Navigator</td>
+          </tr>
+          <tr>
+            <td>State Management</td>
+            <td>10</td>
+            <td>Redux setup</td>
+          </tr>
+          <tr>
+            <td>API Client</td>
+            <td>8</td>
+            <td>Axios + JWT interceptor</td>
+          </tr>
+          <tr>
+            <td>Error Handling + Toast</td>
+            <td>8</td>
+            <td>Network, auth, form errors</td>
+          </tr>
+          <tr>
+            <td>Social Login Native Config</td>
+            <td>10</td>
+            <td>app.json, Info.plist, AndroidManifest</td>
+          </tr>
+          <tr>
+            <td>Branch.io Integration</td>
+            <td>12</td>
+            <td>Dashboard, SDK, fallback links</td>
+          </tr>
+          <tr>
+            <td>Push Notifications</td>
+            <td>14</td>
+            <td>FCM + APNS certs, token handling</td>
+          </tr>
+          <tr>
+            <td>Testing (Unit + E2E)</td>
+            <td>24</td>
+            <td>Jest + Detox</td>
+          </tr>
+          <tr>
+            <td>App Store Prep</td>
+            <td>8</td>
+            <td>Icons, screenshots, privacy policy</td>
+          </tr>
+          <tr>
+            <td>**Total Cross-Cutting**</td>
+            <td>**120**</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>🖼️ FIGMA ANALYSIS SUMMARY (Design Review)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th># of Screens</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Onboarding</td>
+            <td>6</td>
+            <td>Welcome → Auth → Profile (Name, Photos)</td>
+          </tr>
+          <tr>
+            <td>Invite Flow</td>
+            <td>8</td>
+            <td>Schedule → Share → Pending → Accept/Decline</td>
+          </tr>
+          <tr>
+            <td>In-App Scheduling</td>
+            <td>5</td>
+            <td>Profile → Schedule → Confirmation</td>
+          </tr>
+          <tr>
+            <td>My Dates</td>
+            <td>3</td>
+            <td>Tabs: Pending, Upcoming, Past</td>
+          </tr>
+          <tr>
+            <td>Notifications</td>
+            <td>2</td>
+            <td>List + Badge</td>
+          </tr>
+          <tr>
+            <td>Settings</td>
+            <td>3</td>
+            <td>Personal, Password, Notifs</td>
+          </tr>
+          <tr>
+            <td>Refer</td>
+            <td>1</td>
+            <td>Modal</td>
+          </tr>
+          <tr>
+            <td>Components</td>
+            <td>12+</td>
+            <td>Buttons, Cards, Modals, Inputs, Avatars</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">
+              **Total Screens: 38** | **Reusable Components: ~15** | **Design
+              System: Consistent (colors, typography, spacing)**
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      ---
+
+      <h2>📊 FINAL ESTIMATED HOURS & TIMELINE</h2>
+      <table class="summary-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Part 1: Onboarding & Auth</td>
+            <td>60</td>
+          </tr>
+          <tr>
+            <td>Part 2: Invite Flow</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>Part 3: In-App Scheduling</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>Part 4: My Dates</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td>Part 5: Notifications</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>Part 6: Refer</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>Part 7: Settings</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>Cross-Cutting</td>
+            <td>120</td>
+          </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td>437</td>
+          </tr>
+          <tr>
+            <td>Buffer (13%)</td>
+            <td>**+58**</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>GRAND TOTAL</th>
+            <th>495 hours</th>
+          </tr>
+        </tfoot>
+      </table>
+
+      <h3>12-WEEK SPRINT PLAN (FIGMA TO CODE)</h3>
+      <span class="note"
+        >The timeline is set at 12 weeks to accommodate the total hours.</span
+      >
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Goal</th>
+            <th>Figma → Code Mapping</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Project Setup + Auth Skeleton</td>
+            <td>Welcome, Login, Signup</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Email Auth + Google Login</td>
+            <td>Login, Signup, Forgot Password</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Apple + Facebook Login + OAuth Backend</td>
+            <td>Social Login buttons</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Profile Setup (Name, Age, Photos, S3)</td>
+            <td>Name, DOB, Photo Grid</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Invite Flow: Generate Link + Branch.io</td>
+            <td>Schedule Modal, Copy Link</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Deep Linking + Deferred Flow</td>
+            <td>Pending Invite (post-signup)</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Accept/Decline + Push Logic</td>
+            <td>Accept Modal, Decline Reason</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>In-App Scheduling (Send/Receive)</td>
+            <td>Profile → Schedule</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Confirmed Dates + My Dates Tabs</td>
+            <td>Date Card, My Dates</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Notifications + Refer</td>
+            <td>Notifications, Refer Modal</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Settings + UI Polish</td>
+            <td>Settings, Edit Profile, Change Password</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Testing (Unit/E2E), Bug Fixes, App Store Prep</td>
+            <td>App Store Prep Checklist</td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>📁 FILE STRUCTURE & COMPONENT MAPPING</h2>
+
+      <h3>FILE STRUCTURE (FIGMA → CODE)</h3>
+      <pre class="code-block">
+src/
+├── screens/
+│   ├── onboarding/
+│   │   ├── WelcomeScreen.tsx
+│   │   ├── AuthScreen.tsx
+│   │   ├── NameScreen.tsx
+│   │   ├── DobScreen.tsx
+│   │   └── PhotoUploadScreen.tsx
+│   ├── invite/
+│   │   ├── ScheduleInviteScreen.tsx
+│   │   ├── InviteLinkScreen.tsx
+│   │   └── PendingDateScreen.tsx
+│   ├── scheduling/
+│   │   └── ScheduleWithUserScreen.tsx
+│   ├── dates/
+│   │   └── MyDatesScreen.tsx
+│   ├── notifications/
+│   │   └── NotificationsScreen.tsx
+│   └── settings/
+│       ├── SettingsScreen.tsx
+│       ├── EditProfileScreen.tsx
+│       └── ChangePasswordScreen.tsx
+├── components/
+│   ├── atoms/
+│   │   ├── Button.tsx
+│   │   ├── TextInput.tsx
+│   │   ├── Avatar.tsx
+│   │   └── DateTimePicker.tsx
+│   ├── molecules/
+│   │   ├── DateCard.tsx
+│   │   ├── InviteCard.tsx
+│   │   └── PhotoGrid.tsx
+│   └── organisms/
+│       ├── AuthForm.tsx
+│       └── Modal.tsx
+├── navigation/
+│   ├── AppNavigator.tsx
+│   └── TabNavigator.tsx
+├── services/
+│   ├── api.ts
+│   ├── auth.ts
+│   └── storage.ts
+├── store/
+│   └── useUserStore.ts
+└── assets/
+    └── (exported from Figma)
+        </pre
+      >
+
+      <h3>COMPONENT MAPPING (FIGMA → CODE)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Figma Component</th>
+            <th>React Native Code</th>
+            <th>Key Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary Button</td>
+            <td><code>Button.tsx</code></td>
+            <td>(with loading state)</td>
+          </tr>
+          <tr>
+            <td>Text Input</td>
+            <td><code>TextInput.tsx</code></td>
+            <td>(with error handling)</td>
+          </tr>
+          <tr>
+            <td>Avatar Circle</td>
+            <td><code>Avatar.tsx</code></td>
+            <td>(with fallback image)</td>
+          </tr>
+          <tr>
+            <td>Date Card</td>
+            <td><code>DateCard.tsx</code></td>
+            <td>(name, photo, time)</td>
+          </tr>
+          <tr>
+            <td>Photo Grid</td>
+            <td><code>PhotoGrid.tsx</code></td>
+            <td>(drag-reorder feature)</td>
+          </tr>
+          <tr>
+            <td>Modal</td>
+            <td><code>Modal.tsx</code></td>
+            <td>(bottom sheet style)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      ---
+
+      <h2>✅ SOCIAL LOGIN – ACCEPTANCE CRITERIA</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google</td>
+            <td>One-tap login, auto-fill name/email, Android + iOS</td>
+          </tr>
+          <tr>
+            <td>Apple</td>
+            <td>Native button, hide email option, required for App Store</td>
+          </tr>
+          <tr>
+            <td>Facebook</td>
+            <td>Fetch name/email, profile photo optional</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>Secure password, reset flow, rate limiting</td>
+          </tr>
+          <tr>
+            <td>Backend</td>
+            <td>provider, providerId, unique email, support multiple logins</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
